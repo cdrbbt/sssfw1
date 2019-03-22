@@ -1,0 +1,6 @@
+html
+  body
+    each val in cats
+      li= val.name
+      li= val.age
+      img(src="/uploads/"+val.filepath, alt="")
