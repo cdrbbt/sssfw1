@@ -1,9 +1,11 @@
 html
 body
-    <form action="/img/", method="POST" enctype="multipart/form-data">
+    <form action="/cats/", method="POST" enctype="multipart/form-data">
     label(for="photo") Cat Photo
     input#photo(type="file", name="photo")
+    label(for="name") Cat name
     input#text(type="text", name="name")
+    label(for="age") Cat age
     input(type="text", name="age")
     input(type="submit", value="Submit")
     </form>
