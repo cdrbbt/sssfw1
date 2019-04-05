@@ -1,5 +1,6 @@
 const express = require('express');
 const multer = require('multer');
+const bodyParser = require('body-parser');
 const catcontrollers = require('../controllers/catController');
 
 
@@ -18,5 +19,6 @@ const router = express.Router();
 router.get('/', catcontrollers.get_cats_page);
 router.get('/cats', catcontrollers.get_cats);
 router.post('/', upload.single('photo'), catcontrollers.post_cats);
+router.delete('/', bodyParser.urlencoded(), catcontrollers.delete_cats);
 
 module.exports = router;

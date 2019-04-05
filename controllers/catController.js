@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 const Cats = require('../models/catModel');
 
+
 exports.get_cats = (req, res) => {
   Cats.find().then(cats => res.send(cats));
 };
@@ -20,6 +21,6 @@ exports.post_cats = (req, res) => {
 };
 
 exports.delete_cats = (req, res) => {
-  console.log(res.body);
-  Cats.deleteOne({ name: res.body.name }, err => console.log(err)).then(res.send('ok'));
+  console.log(req.body);
+  Cats.deleteOne({ name: req.body.name }, err => console.log(err)).then(res.send('ok'));
 };
