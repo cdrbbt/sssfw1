@@ -15,7 +15,8 @@ const upload = multer({ storage });
 
 const router = express.Router();
 
-router.get('/', catcontrollers.get_cats);
+router.get('/', catcontrollers.get_cats_page);
+router.get('/cats', catcontrollers.get_cats);
 router.post('/', upload.single('photo'), catcontrollers.post_cats);
 
 module.exports = router;
